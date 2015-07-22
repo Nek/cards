@@ -1,0 +1,46 @@
+/* some style */
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+}
+
+input[type="text"] {
+  display: block;
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 18px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+.dump input[type="text"] {
+  padding: 10px;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+.dump input[type="text"]:focus,
+.dump input[type="text"].focus {
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+}
+.grid {
+    padding: 0; 
+}
+.card {
+    display: inline-block;
+    background-color: grey;
+    width: 60px;
+    height: 100px;
+    decoration: none;
+    list-style-type: none;
+    indent: 0;
+    margin: 5px;
+    padding: 5px;
+}
