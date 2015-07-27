@@ -13,10 +13,11 @@
 
 (defn save-state [request]
   (let [post-value (get-in request [:body])]
-    (spit "state.txt" (slurp post-value))))
+    (spit "state.txt" (slurp post-value))
+    {:status 200 :body "OK"}))
 
 (defn load-state [request]
-  (slurp "state.txt"))
+  {:status 200 :body (slurp "state.txt")})
 
 
 (deftemplate page (io/resource "index.html") []

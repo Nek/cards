@@ -11,9 +11,14 @@
 
 (defonce conn (d/create-conn {
                               :app/card {
-                                           ;;:db/valueType :db.type/ref
                                            :db/cardinality :db.cardinality/many }
                           }))
+
+(defn save-state [] (ajax.core/POST "/save" {:format :edn :params @conn}))
+
+(defn handler [v] (reset! conn (cljs.reader/read-string v)))
+(defn load-state [] (ajax.core/GET "/load"
+                                   {:handler handler}))
 
 (defn node [x y title]
   [:div

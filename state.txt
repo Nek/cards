@@ -1,0 +1,1 @@
+#datascript/DB {:schema {:app/card {:db/cardinality :db.cardinality/many}}, :datoms [[1 :app/overlay false 536870931] [2 :app/input "" 536870932] [3 :app/card " 123" 536870922] [3 :app/card " fff" 536870930] [3 :app/card "First" 536870915] [3 :app/card "Second" 536870916]]}
