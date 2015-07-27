@@ -17,7 +17,10 @@
     {:status 200 :body "OK"}))
 
 (defn load-state [request]
-  {:status 200 :body (slurp "state.txt")})
+  (try {:status 200 :body (slurp "state.txt")}
+       (catch Exception e
+         {:status 500 :body "NOT OK"})
+       ))
 
 
 (deftemplate page (io/resource "index.html") []

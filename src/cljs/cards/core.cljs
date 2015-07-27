@@ -18,7 +18,12 @@
 
 (defn handler [v] (reset! conn (cljs.reader/read-string v)))
 (defn load-state [] (ajax.core/GET "/load"
-                                   {:handler handler}))
+                                   {:handler handler
+                                    :error-handler (fn []
+                                                     (d/transact! conn [{:db/id 1 :app/overlay false}])
+                                                     (d/transact! conn [{:db/id 2 :app/input "!!!"}])
+                                                     (d/transact! conn [[:db/add 3 :app/card "First"]])
+                                                     (d/transact! conn [[:db/add 3 :app/card "Second"]]))}))
 
 (defn node [x y title]
   [:div
@@ -122,8 +127,4 @@
          )
 
 (defn main []
-  (d/transact! conn [{:db/id 1 :app/overlay false}])
-  (d/transact! conn [{:db/id 2 :app/input "!!!"}])
-  (d/transact! conn [[:db/add 3 :app/card "First"]])
-  (d/transact! conn [[:db/add 3 :app/card "Second"]])
-)
+  (load-state))
