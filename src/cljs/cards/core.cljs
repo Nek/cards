@@ -1,4 +1,4 @@
-(ns save-state.core
+(ns cards.core
   (:require [om.core :as om :include-macros true]
             [om.dom :as dom :include-macros true]
             [datascript :as d]

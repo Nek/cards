@@ -1,6 +1,6 @@
-(ns save-state.server
+(ns cards.server
   (:require [clojure.java.io :as io]
-            [save-state.dev :refer [is-dev? inject-devmode-html browser-repl start-figwheel]]
+            [cards.dev :refer [is-dev? inject-devmode-html browser-repl start-figwheel]]
             [compojure.core :refer [GET POST defroutes]]
             [compojure.route :refer [resources]]
             [net.cgrand.enlive-html :refer [deftemplate]]

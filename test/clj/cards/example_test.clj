@@ -1,4 +1,4 @@
-(ns save_state.example-test
+(ns cards.example-test
     (:require [clojure.test :refer :all]))
 
 (deftest example-passing-test

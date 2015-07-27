@@ -1,4 +1,4 @@
-(defproject save-state "0.1.0-SNAPSHOT"
+(defproject cards "0.1.0-SNAPSHOT"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
@@ -28,7 +28,7 @@
 
   :min-lein-version "2.5.0"
 
-  :uberjar-name "save-state.jar"
+  :uberjar-name "cards.jar"
 
   :cljsbuild {:builds {:app {:source-paths ["src/cljs"]
                              :compiler {:output-to     "resources/public/js/app.js"
@@ -47,7 +47,7 @@
                                   [org.clojure/tools.nrepl "0.2.10"]
                                   [weasel "0.7.1-SNAPSHOT"]]
 
-                   :repl-options {:init-ns save-state.server
+                   :repl-options {:init-ns cards.server
                                   :nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
 
                    :plugins [[lein-figwheel "0.3.7"]]
@@ -55,7 +55,7 @@
                    :figwheel {:http-server-root "public"
                               :server-port 3449
                               :css-dirs ["resources/public/css"]
-                              :ring-handler save-state.server/http-handler}
+                              :ring-handler cards.server/http-handler}
 
                    :env {:is-dev true}
 
@@ -74,7 +74,7 @@
                        :env {:production true}
                        :omit-source true
                        :aot :all
-                       :main save-state.server
+                       :main cards.server
                        :cljsbuild {:builds {:app
                                             {:source-paths ["env/prod/cljs"]
                                              :compiler

@@ -1,1 +1,1 @@
-web: java $JVM_OPTS -cp target/save-state.jar clojure.main -m save-state.server
+web: java $JVM_OPTS -cp target/cards.jar clojure.main -m cards.server

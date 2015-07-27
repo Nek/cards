@@ -27,7 +27,7 @@ page.open(url, function (status) {
   console.log("Running test.");
 
   var result = page.evaluate(function() {
-    return save_state.test_runner.runner();
+    return cards.test_runner.runner();
   });
 
   if (result != 0) {

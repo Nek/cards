@@ -1,5 +1,5 @@
-(ns save-state.main
-  (:require [save-state.core :as core]
+(ns cards.main
+  (:require [cards.core :as core]
             [figwheel.client :as figwheel :include-macros true]
             [cljs.core.async :refer [put!]]
             [weasel.repl :as weasel]))
